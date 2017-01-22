@@ -19,7 +19,8 @@ namespace ConsoleApplicationXML
         static void Main(string[] args)
         {
             //ReadAndDisplayStringXML();
-            AddNewElementandValuesToExisitingInlineXMLstring();
+            //AddNewElementandValuesToExisitingInlineXMLstring();
+            DeleteElementFromXML();
             Console.ReadLine();
         }
 
@@ -52,6 +53,22 @@ namespace ConsoleApplicationXML
             }
 
             xdoc.Save("Output.xml");
+        }
+
+        static void DeleteElementFromXML()
+        {
+            XDocument xdoc = XDocument.Parse(myXML);
+
+            xdoc.Element("Departments").Descendants().Where(x => x.Value == "Marketing").Remove();
+
+            var newDecendants = xdoc.Element("Departments").Descendants();
+            Console.WriteLine("Updated List is ");
+            foreach(var elem in newDecendants)
+            {
+                Console.WriteLine(elem.Value);
+            }
+
+
         }
 
     }
