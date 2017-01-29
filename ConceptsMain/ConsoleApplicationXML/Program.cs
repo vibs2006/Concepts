@@ -24,6 +24,9 @@ namespace ConsoleApplicationXML
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Read and Display XML String
+        /// </summary>
         static void ReadAndDisplayStringXML()
         {
             XDocument xdoc = new XDocument();
