@@ -37,6 +37,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LAB1", "Concepts\AngularJS\
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "64202"
+		SlnRelativePath = "Concepts\AngularJS\Questpond\LAB1\"
 	EndProjectSection
 EndProject
 Global

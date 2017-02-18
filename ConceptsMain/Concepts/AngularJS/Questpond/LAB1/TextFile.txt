@@ -1,0 +1,42 @@
+﻿
+Lab 1:
+scope is different for both Angular.
+Angular JS is a MVM framework which helps you to connect Javascript object to a UI (controller instance)
+$scope does a dependency injection. Angular takes care of instance management using DI. 
+$ are ready made services of angular. You can reference them simply. 
+
+$rootScope (similar to document)
+ different $scope for different controller (divs)
+
+ $rootScrope
+	-> $scope (1st instance)
+	-> $scope (2nd Instance)
+
+Important Point to remember is that properties are generated automatically if they are not defined in the angular.controller or javascript object. 
+
+Lab 2:
+Angular Digest Cycle
+Digest cycle doesn't runs continously in the background. It runs on a angular event. e.g textbox change event.
+
+$.apply() is first called in digest cycle. 
+
+Model -> Event -> Start ($.apply()) -> Signal out -> $.digest (is the loop and evaluates all the watchers)
+Digest cycle runs minimum twice and multiple times. It is termed as dirty checking. 
+It means evaluation of model and its dependencies changes. Evaluating watchers and updating the DOM. 
+
+ngModelWatch are the watchers which are concerned with the models watching only. mostly associated with ng-model.
+do not think that number of watcher exactly match expression and properties. 
+Watchers and Digest gets activated when any event happens. 
+	- Ng-Model Watchers (ng-model)
+	- Expression Watcher ({{}})
+To INCREASE PERFORMANCE some watchers which needn't to evaluted again and again can be watched only once during the page load etc. 
+syntax e.g {{::variable}}
+also note that angular fires digest only after there is a change in old value vs new value. 
+You can also manually watch any javascript object by the following syntax
+$scope.$watch("nameOfObject", function(){}) (this is call back event handler)
+
+Lab 3:
+there are two ways for DI
+angular.factory (for independent instances. Factory.CreateClassObject())
+angular.service (for global and utility classes)
+

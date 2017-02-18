@@ -2,9 +2,37 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
+    <script src="Scripts/angular.js"></script>
+    <script src="customJS/Models.js"></script>
+    <script src="customJS/Controllers.js"></script>
+    <script src="customJS/Utility.js"></script>
+    <script>
+        var myApp = angular.module("myApp", []); //empty brackets are angular modules 3rd Party.
+        myApp.controller("Customerobj", BindingCode); //Customerobj is like a key which will be referred in hTML class.
+        myApp.factory("Factory", Factory); //Dependency Injection among various objects
+        myApp.service("UtilityObject", Utility);
+        
+    </script>
 </head>
-<body>
+<body ng-app="myApp">
+    <!--You can define it anywhere but main intention is to enclode all the tags of ng-controller-->
+    <div>
+        <div id="CustScreen" ng-controller="Customerobj">
+            Today Date is: {{util.getCurrentDate()}} <br />
+            Customer Name :- <input type="text" ng-model="cust.cname" id="CustomerName" /><br />
+            Customer Code :- <input type="text" ng-model="cust.cid" id="CustomerCode" /><br />
+            Customer Amount:- <input type="text" name="amount" ng-model="cust.Amount" style="background-color:{{cust.CustomerBackgroundColor}}" />
+            <hr />
+            <div id="divCustomerName">{{cust.cname}}</div>
+            <br />
+            <div id="divCustomerCode">{{cust.cid}}</div><br />  
+            <input type="button" name="btnSubmit" value="Test Buttton" ng-click="Submit()" />
+            <input type="button" name="btnCalculateDisc" ng-click="cust.CalculateDiscount()" value="Calculate Discount" />
+        </div>
 
+        <hr />
+      
+    </div>
 </body>
 </html>
