@@ -13,5 +13,11 @@ namespace WebApplication20170129.Controllers
         {
             return View();
         }
+
+        public ActionResult testView1()
+        {
+
+            return View();
+        }
     }
 }
