@@ -40,3 +40,21 @@ there are two ways for DI
 angular.factory (for independent instances. Factory.CreateClassObject())
 angular.service (for global and utility classes)
 
+Lab 4:
+Preflight call happens before main call in crossdomain scenarios. 
+
+Lab 5: 
+Sample Directives
+An important thing to remember is that a directive runs INSIDE the SCOPE of a controller. 
+To create a new scope you need to do - directive.scope = {}; via autoproperties. 
+One way binding can be introduced by using "@". which means that data can flow from controller to directive but not vice versa. 
+"=" is a two 
+
+Lab 6: $q (defers and promises)
+from Q -> Defer Object 
+From Defer -> Promise
+From Promise -> Attach Logics. 
+Notify can fire MULTIPLE times however resolve and reject fires only ONCE. 
+
+
+
