@@ -2,12 +2,13 @@
 /// <reference path="../Scripts/angular-mocks.js" />
 
 
-var BindingCode = function ($scope,Factory,UtilityObject,$http,$q)
+var BindingCode = function ($scope,Factory,UtilityObject,$http,$q,$sce)
 {
     //$scope.cname = "Vaibhav";
     //$scope.cid = "1001";
     //$scope.CustomerBackgroundColor = "Blue";
     //$scope.Amount = "100";
+
 
     $scope.successFn = function (response) {
         $scope.lstCust = response.data;
@@ -67,8 +68,16 @@ var BindingCode = function ($scope,Factory,UtilityObject,$http,$q)
                     //$scope.lstCust = data.data;
                     //console.log(data);
                     //$scope.cust.cname = "Name Changed";
+                    $scope.div1Value =  $sce.trustAsHtml("<span style='color:green'>Connection Succeeded</span>");
 
                     defer.resolve(data);
+                }, function (failureData) {
+                    //alert("Connection Failed.");
+                    console.log(failureData);
+                    $scope.div1Value = "<span style='color:red'>" + failureData.data.Message + "<br /><br />"
+                                        + failureData.data.MessageDetail + "</span>";
+     
+
                 });
         }
     };

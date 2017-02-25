@@ -4,11 +4,22 @@
     <title></title>
     <meta charset="utf-8" />
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
     <script src="customJS/Models.js"></script>
     <script src="customJS/Controllers.js"></script>
     <script src="customJS/Utility.js"></script>
     <script>
-        var myApp = angular.module("myApp", []); //empty brackets are angular modules 3rd Party.
+        var myApp = angular.module("myApp", ['ngSanitize']); //empty brackets are angular modules 3rd Party.
+        //myApp.filter('trust', ['$sce', function ($sce)
+        //{
+        //    return function (value, type)
+        //        {
+        //            // Defaults to treating trusted text as `html`
+        //            return $sce.trustAs(type || 'html', text);
+        //        }
+        //}
+        //]);
+
         myApp.controller("Customerobj", BindingCode); //Customerobj is like a key which will be referred in hTML class.
         myApp.factory("Factory", Factory); //Dependency Injection among various objects
         myApp.service("UtilityObject", Utility);
@@ -22,7 +33,7 @@
 
         var sampleDirective = function () {
             var directivex = {};
-            directivex.restrict = "E"; //E for Element and A for attribute //EA for both which is default EACM C for css and M for comments
+            //directivex.restrict = "E"; //E for Element and A for attribute //EA for both which is default EACM C for css and M for comments
             directivex.template = "Sample Template Text"; //You can put angular expression as well.
             return directivex;
         };
@@ -40,7 +51,7 @@
             <hr />
             <div id="divCustomerName">{{cust.cname}}</div>
             <br />
-            <div id="divCustomerCode">{{cust.cid}}</div><br />  
+            <div id="divCustomerCode">{{cust.cid}}</div><br />
             <table>
                 <tr>
                     <th>Customer ID</th>
@@ -54,13 +65,13 @@
                 </tr>
             </table>
             <div user-control1></div>
-
+            <div ng-bind-html="div1Value" id="divConnectStatus"></div>
             <input type="button" name="btnSubmit" value="Test Buttton" ng-click="Submit()" />
             <input type="button" name="btnCalculateDisc" ng-click="cust.CalculateDiscount()" value="Calculate Discount" />
         </div>
 
         <hr />
-      
+
     </div>
 </body>
 </html>
