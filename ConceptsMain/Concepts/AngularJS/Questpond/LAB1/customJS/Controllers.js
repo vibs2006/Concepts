@@ -47,7 +47,7 @@ var BindingCode = function ($scope,Factory,UtilityObject,$http,$q,$sce)
     });
 
     $scope.Submit = function () {
-
+        $scope.div1Value = "";
         if ($scope.cust.cname.length == 0) {
             alert("Name is Blank");
         }
@@ -74,8 +74,8 @@ var BindingCode = function ($scope,Factory,UtilityObject,$http,$q,$sce)
                 }, function (failureData) {
                     //alert("Connection Failed.");
                     console.log(failureData);
-                    $scope.div1Value = "<span style='color:red'>" + failureData.data.Message + "<br /><br />"
-                                        + failureData.data.MessageDetail + "</span>";
+                    $scope.div1Value = $sce.trustAsHtml("<span style='color:red;text-indent: 50px;'>" + failureData.data.Message + "<br /><br />"
+                                        + failureData.data.MessageDetail + "</span>");
      
 
                 });

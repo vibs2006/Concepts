@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script>
+
+        function testObject()
+        {
+
+            var _firstName = "Vaibhav";
+            var _lastName = "Agarwal";
+
+            var calculate = function (value) {
+
+                alert("Calculated Value is " + value);
+            };
+            
+            return {
+
+                FirstName: _firstName,
+                LastName: _lastName,
+                CalculatePublic: calculate(prompt())
+
+            }
+
+           
+
+        }
+
+
+        var test = new testObject();
+        test.CalculatePublic;
+        //alert(test.FirstName + " " + test.FirstName);
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

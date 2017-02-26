@@ -56,5 +56,22 @@ From Defer -> Promise
 From Promise -> Attach Logics. 
 Notify can fire MULTIPLE times however resolve and reject fires only ONCE. 
 
+Lab 7:
+angular.ui.router
+myApp.config(function($stateProvider, $urlRouterProvider){
+$stateProvider
+	.state("Page1", {
+		url: "/url1",
+		templateUrl: "url1page.html"
+	})
+	.state("Page2", {
+		url: "/url2",
+		template: "<b>This is HTML content</b>"
+	});
+
+	Also listen about Nested Views  
+
+}); 
+
 
 
