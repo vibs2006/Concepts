@@ -1,0 +1,4 @@
+﻿
+TempData["t1"] = "some value or object"
+TempData will preserve value if value is NOT read in next request. 
+
