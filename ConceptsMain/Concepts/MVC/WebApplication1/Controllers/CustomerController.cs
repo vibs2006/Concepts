@@ -29,6 +29,11 @@ namespace WebApplication1.Controllers
                 CustomerDBContext _dbcontext = new CustomerDBContext();
                 _dbcontext.Customers.Add(objCust);
                 _dbcontext.SaveChanges();
+
+                var AllCustomers = _dbcontext.Customers.ToList<Customer>();
+
+                ViewBag.AllCustomers = AllCustomers;
+
                 return View("CustomerSaveConfirmation",objCust);
             }
             else

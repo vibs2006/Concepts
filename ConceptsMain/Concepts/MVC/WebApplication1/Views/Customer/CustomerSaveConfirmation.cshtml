@@ -1,5 +1,6 @@
 ﻿@model WebApplication1.Customer
 
+
 @{
     ViewBag.Title = "Customer Save Confirmation";
 
@@ -22,6 +23,20 @@
 </div>
 <div>
 
+    <table>
+        <tr>
+            <th>Customer Name</th>
+        </tr>
+        @{
+            foreach (Customer cust in (List<Customer>)ViewBag.AllCustomers)
+            {
+            <tr>
+                <td>@cust.Name</td>
+            </tr>
+            }
+        }
+
+    </table>
 
 
 </div>
