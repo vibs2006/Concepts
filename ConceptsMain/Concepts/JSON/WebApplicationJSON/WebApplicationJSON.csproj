@@ -108,7 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="data.txt" />
-    <Content Include="HtmlPage1.html" />
+    <Content Include="ReadingJSONfromText.html" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <None Include="scripts\jquery-1.12.4.intellisense.js" />
