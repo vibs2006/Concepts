@@ -1,0 +1,4 @@
+﻿{
+	"server" : "server1",
+	"stream" : "streamName"
+}

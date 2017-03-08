@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="scripts/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                url: 'data.txt',
+                method: 'get',
+                dataType: 'json',
+                success: function (data) {
+                    var returnData = JSON.stringify(data); //This is required to remove all indents and spaces
+                    var jsonObject = {};
+                    jsonObject = JSON.parse(returnData); //Converting finally to JSON Object     
+                    console.log(jsonObject);
+                    $("#divTarget").html("Data is " + jsonObject.server + " and " + jsonObject.stream);
+                   }
+            });
+
+        });
+
+
+    </script>
+    <div id="divTarget"></div>
+</body>
+</html>
