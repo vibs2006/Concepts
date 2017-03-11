@@ -98,6 +98,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ReadJSONUsingCSharp.aspx" />
     <Content Include="scripts\jquery-1.12.4.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -118,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadJSONUsingCSharp.aspx.cs">
+      <DependentUpon>ReadJSONUsingCSharp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadJSONUsingCSharp.aspx.designer.cs">
+      <DependentUpon>ReadJSONUsingCSharp.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
