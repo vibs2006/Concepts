@@ -44,6 +44,18 @@ namespace WebApplication1.Controllers
 
         }
 
+        
+        [HandleError(ExceptionType = typeof(Exception), View = "Error"  )]
+        public ActionResult testException()
+        {
+            int i = 0;
+
+            int y = 5 / i;
+
+            return Content("test");
+
+        }
+
 
     }
 }
