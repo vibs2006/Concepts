@@ -9,12 +9,21 @@ using System.IO;
 
 namespace WebApplicationJSON
 {
+
+  
     public class FMSDetails
     {
         public string server { get; set; }
         public string stream { get; set; }
 
     }
+
+    public class HourlyGraph
+    {
+        public int Hour { get; set; }
+        public int Sales { get; set; }
+    }
+
 
     public partial class ReadJSONUsingCSharp : System.Web.UI.Page
     {
@@ -25,10 +34,21 @@ namespace WebApplicationJSON
 
             string json = r.ReadToEnd();
             var serializer = new JavaScriptSerializer();
-            FMSDetails objFMSDetails = serializer.Deserialize<FMSDetails>(json); 
+            FMSDetails objFMSDetails = serializer.Deserialize<FMSDetails>(json);
             divOutput.InnerHtml = "Server IP is <b>" + objFMSDetails.server + "</b> and Stream name is <b>" + objFMSDetails.stream + "</b>";
+
+
+            //var lst = new List<FMSDetails>();
+            //lst.Add(new FMSDetails() { stream = "ServerName1", server = "serverName1" });
+            //lst.Add(new FMSDetails() { stream = "ServerName2", server = "serverName2" });
+
+            //var serialzer = new JavaScriptSerializer();
+
+            //string s = serialzer.Serialize(lst.Select(x => new { device = x.stream, geekbench = x.stream }));
+            //Response.Write(s);
 
 
         }
     }
+
 }
