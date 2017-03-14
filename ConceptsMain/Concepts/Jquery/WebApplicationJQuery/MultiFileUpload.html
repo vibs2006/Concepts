@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+    <form enctype="multipart/form-data" method="post" id="myForm1">
+        <p><textarea id="TextArea1" rows="2" cols="20" name="TextArea1"></textarea></p>
+        <p><input id="File1" type="file" multiple="multiple" /></p>
+        <input id="btnUpload" type="button" value="Submit" />
+    </form>
+
+    <script>
+
+        $(document).ready(function () //Setting up on Document to Ready Function
+        {
+            
+            $("#btnUpload").click(function (event) {
+
+                //getting form into Jquery Wrapper Instance to enable JQuery Functions on form                    
+                var form = $("#myForm1");
+
+                //Serializing all For Input Values (NOT files!) in an Array Collection so that we can iterate this collection later.
+                var params = form.serializeArray();
+
+                //Getting Files Collection
+                var files = $("#File1")[0].files;
+
+                //Declaring new Form Data Instance  
+                var formData = new FormData();
+
+                //Looping through uploaded files collection in case there is a Multi File Upload. 
+                //This also works for single i.e simply remove MULTIPLE attribute from file control in HTML.  
+                for (var i = 0; i < files.length; i++) {
+                    formData.append(files[i].name, files[i]);
+                }
+
+                //Now Looping the parameters for all form input fields and assigning them as Name Value pairs. 
+                $(params).each(function (index, element) {
+                    formData.append(element.name, element.value);
+                });
+
+                //disabling Submit Button so that user cannot press Submit Multiple times
+                var btn = $(this);
+                btn.val("Uploading...");
+                btn.prop("disabled", true);
+
+                $.ajax({
+                    url: "Handler.ashx", //You can replace this with MVC/WebAPI/PHP/Java etc
+                    method: "post",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function () {
+                        //Firing event if File Upload is completed!  
+                        alert("Upload Completed");
+                        btn.prop("disabled", false);
+                        btn.val("Submit");
+                        $("#File1").val("");
+
+                    },
+                    error: function (error) { alert("Error"); }
+
+                });
+
+            });
+
+        });
+    </script>
+</body>
+</html>
