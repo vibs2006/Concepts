@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
     <title>Get File Size Before Uploading in JavaScript</title>
 </head>
 <body>
@@ -15,7 +16,11 @@
     <script>
         function GetFileSizeNameAndType()
         {
-        var fi = document.getElementById('file'); // GET THE FILE INPUT AS VARIABLE.
+            var fi = document.getElementById('file'); // GET THE FILE INPUT AS VARIABLE.
+
+            var files = $("#file");
+            console.log(files);
+            //alert(files[0].files.item(1).name);
 
         var totalFileSize = 0;
 
