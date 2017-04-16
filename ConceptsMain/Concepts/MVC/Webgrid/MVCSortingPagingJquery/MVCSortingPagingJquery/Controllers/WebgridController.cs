@@ -31,5 +31,27 @@ namespace MVCSortingPagingJquery.Controllers
             return PartialView("_dataList", cdm);
         }
 
+        [HttpPost]
+        public ActionResult GetCustomerData2(GridParameters objParams)
+        {
+            var page = Convert.ToInt16(objParams.page);
+            CustomerDataModel cdm = new CustomerDataModel();
+            cdm.PageSize = 4;
+            using (MyDatabaseEntities dc = new MyDatabaseEntities())
+            {
+                cdm.TotalRecord = dc.CustomerInfoes.Count();
+                cdm.NoOfPages = (cdm.TotalRecord / cdm.PageSize) + ((cdm.TotalRecord % cdm.PageSize) > 0 ? 1 : 0);
+                cdm.Customer = dc.CustomerInfoes.OrderBy("CustomerID").Skip((page - 1) * cdm.PageSize).Take(cdm.PageSize).ToList();
+            }
+            return PartialView("_dataList", cdm);
+        }
+
+        
+    }
+
+    public class GridParameters
+    {
+        public string page { get; set; }
+
     }
 }

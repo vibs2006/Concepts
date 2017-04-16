@@ -16,13 +16,42 @@
             //thead th a ---> webgrid header link (sorting) , tfoot a     --> webgrid footer link (paging)
 
             $("#demoArea").on("click", "thead th a, tfoot a", function (e) {
-                //e.preventDefault();
+                e.preventDefault();
 
-                var param = $(this).attr('href').split('?')[1];
+                var param = $(this).attr('href').split('=')[1];
+                
+                
+                console.log(param);
+
+                var url = '@Url.Action("GetCustomerData2","Webgrid")';
+                console.log(url
+                    );
+                $.ajax({
+                    url: url,
+                    type:'POST',
+                    data: JSON.stringify({ page: param }),
+                    dataType: 'html',
+                    contentType: "application/json; charset=utf-8",
+                    cache : false,
+                    success: function (data) {
+                        console.log(data);
+                        $('#demoArea').html(data);
+                    },
+                    error: function (e) {
+                        console.log(e);
+                        $('#demoArea').html(e.responseText);
+                        //alert('Error!');
+                    }
+                });
+                return false;
+
+
+                @*var param = $(this).attr('href').split('?')[1];
+
                 var url = '@Url.Action("GetCustomerData","Webgrid")' + '?' + param;
                 $.ajax({
                     url: url,
-                    type:'GET',
+                    type: 'GET',
                     data: '',
                     dataType: 'html',
                     success: function (data) {
@@ -32,7 +61,8 @@
                         alert('Error!');
                     }
                 });
-                return false;
+                return false;*@
+
             });
         });
     </script>
