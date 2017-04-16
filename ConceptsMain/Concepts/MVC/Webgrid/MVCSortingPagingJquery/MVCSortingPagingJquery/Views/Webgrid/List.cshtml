@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+
+<h2>Customer List</h2>
+<div id="demoArea">
+    @{Html.RenderAction("GetCustomerData", "Webgrid");}
+</div>
+
+@* Here I will write jquery code for webgrid paging and sorting *@
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+            //thead th a ---> webgrid header link (sorting) , tfoot a     --> webgrid footer link (paging)
+
+            $("#demoArea").on("click", "thead th a, tfoot a", function (e) {
+                //e.preventDefault();
+
+                var param = $(this).attr('href').split('?')[1];
+                var url = '@Url.Action("GetCustomerData","Webgrid")' + '?' + param;
+                $.ajax({
+                    url: url,
+                    type:'GET',
+                    data: '',
+                    dataType: 'html',
+                    success: function (data) {
+                        $('#demoArea').html(data);
+                    },
+                    error: function () {
+                        alert('Error!');
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+}
