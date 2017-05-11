@@ -1,0 +1,39 @@
+﻿TestContext.DataRow.Table.Columns["Startdate"].ToString()
+TestContext.DataRow.Table.Rows[0]["Startdate"].ToString()
+
+CSV Data Driven Help
+https://www.codeproject.com/Articles/710072/Data-driven-troubles
+
+ private TestContext _testContext;
+        public TestContext TestContext
+        {
+            get
+            {
+                return _testContext;
+            }
+            set
+            {
+                _testContext = value;
+            }
+        }
+
+		<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="microsoft.visualstudio.testtools" type="Microsoft.VisualStudio.TestTools.UnitTesting.TestConfigurationSection, Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+  </configSections>
+  <connectionStrings>
+    <add name="ExcelConnection" connectionString="Driver={Microsoft Excel Driver (*.xls)};dbq=E:\Projects\ParcelVision\ParcelVision\ParcelVision.WebUI.Unit.Test\parameters1.xls;defaultdir=E:\Projects\ParcelVision\ParcelVision\ParcelVision.WebUI.Unit.Test;driverid=790;fil=excel 8.0;filedsn=C:\Users\v.agarwal\Documents\unit-test-dsn.dsn;maxbuffersize=2048;maxscanrows=8;pagetimeout=5;readonly=1;safetransactions=0;threads=3;uid=admin;usercommitsync=Yes" providerName="System.Data.Odbc" />
+    <add name="MyExcelConn" connectionString="Dsn=Excel Files;dbq=parameters1.xls;defaultdir=.; driverid=790;maxbuffersize=2048;pagetimeout=5" providerName="System.Data.Odbc" />
+    <add name="parcelheroconnect" connectionString="Data Source=sqlserver;Failover Partner=sqlserver;Initial Catalog=ParcelHero_TEST;user id=sa;password=pass#word1;Connect Timeout=600;max pool size=100000;" providerName="System.Data.SqlClient" />
+    <add name="deliverplusconnect" connectionString="Data Source=sqlserver;Failover Partner=sqlserver;Initial Catalog=CourierData_Test;user id=sa;password=pass#word1;Connect Timeout=600;max pool size=100000;" providerName="System.Data.SqlClient" />
+    <add name="fastlaneconnect" connectionString="Data Source=sqlserver;Failover Partner=sqlserver;Initial Catalog=Fastlane;user id=sa;password=pass#word1;Connect Timeout=600;max pool size=100000;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <microsoft.visualstudio.testtools>
+    <dataSources>
+      <!--<add name="MyExcelDataSource" connectionString="ExcelConnection" dataTableName="Sheet1$" dataAccessMethod="Sequential"/>-->
+      <add name="MyExcelDataSource" connectionString="ExcelConnection" dataTableName="Sheet1$" dataAccessMethod="Sequential"/>
+    </dataSources>
+  </microsoft.visualstudio.testtools>
+</configuration>
+
