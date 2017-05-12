@@ -26,7 +26,8 @@ namespace MVCSortingPagingJquery.Controllers
             {
                 cdm.TotalRecord = dc.CustomerInfoes.Count();
                 cdm.NoOfPages = (cdm.TotalRecord / cdm.PageSize) + ((cdm.TotalRecord % cdm.PageSize) > 0 ? 1 : 0);
-                cdm.Customer = dc.CustomerInfoes.OrderBy(sort + " " + sortdir).Skip((page - 1) * cdm.PageSize).Take(cdm.PageSize).ToList();
+                //cdm.Customer = dc.CustomerInfoes.OrderBy(sort + " " + sortdir).Skip((page - 1) * cdm.PageSize).Take(cdm.PageSize).ToList();
+                cdm.Customer = dc.CustomerInfoes.ToList();
             }
             return PartialView("_dataList", cdm);
         }

@@ -1,20 +1,31 @@
-﻿@model MVCSortingPagingJquery.Models.CustomerDataModel
+﻿
+@model MVCSortingPagingJquery.Models.CustomerDataModel
 
 @{
-    var grid = new WebGrid(rowsPerPage: Model.PageSize);
-    grid.Bind(Model.Customer, autoSortAndPage: false, rowCount: Model.TotalRecord);
+    var grid = new WebGrid(source:Model.Customer, canSort:true,canPage:true
+        ,ajaxUpdateContainerId:"divContainer");
+    //grid.Bind(Model.Customer, autoSortAndPage: false, rowCount: Model.TotalRecord);
 }
 
+<div id="divContainer">
     @grid.GetHtml(
-    tableStyle:"gridtable",
+    tableStyle: "gridtable",
     columns: grid.Columns(
-                grid.Column("CustomerID","Customer ID"),
+                grid.Column("CustomerID", "Customer ID"),
                 grid.Column("CustomerName", "Customer Name"),
                 grid.Column("Address", "Address"),
                 grid.Column("City", "City"),
                 grid.Column("PostalCode", "Postal Code")
             )
         )
+
+
+</div>
+
+
+
+
+    
 
 @* Css for good looks of webgrid *@
 <style type="text/css">
