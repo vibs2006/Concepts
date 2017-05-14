@@ -56,9 +56,84 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\17193218367910357695" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\8564738729819628312" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\a.min.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\ads" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\ads%281%29" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\article.min.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\DFPAudiencePixel" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\DFPAudiencePixel%281%29" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\element.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\element_main.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\ga.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\gpt.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\jquery.min.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\l" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\l%281%29" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\main.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\MemberProfilePopup.min.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\m_window_focus_non_hydra.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\navbar.min.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Notifications.min.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\osd.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\osd_listener.js.download" />
+    <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\pubads_impl_117.js.download" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TextFile1.txt" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject.html" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\animated.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\animated_loading_blue.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\arrow-down-16.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\arrow-up-16.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\arrow-up24.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\bookmark24.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\circle-cross.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\cleardot.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\DataFileProperties.jpg" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\downvote16.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\help_sm.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\icn-member-16.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\icn-pro-16.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\InFolder.jpg" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\InSolution.jpg" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\logo250x135.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Main.min.css" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_admin.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_answer.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_bug.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_general.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_idea.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_joke.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_kudos.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_news.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_question.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\msg_rant.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\pin.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\pollcol.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\print24.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\RU.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\saved_resource%281%29.html" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\saved_resource%282%29.html" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\saved_resource%283%29.html" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\saved_resource.html" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\search.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\stars-empty-md.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\stars-fill-md.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\t%281%29.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\t.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Thumb-107.jpg" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Thumb-12999.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Thumb-216165.jpg" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Thumb-23.gif" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Thumb-24758.jpg" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\Thumb-47864.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\translateelement.css" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\translate_24dp.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\upvote16.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\write13.png" />
+    <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\{2b133756-9b3b-4836-b731-d84df9ac39f1}.jpg" />
+    <Content Include="Articles\TextFile1.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
