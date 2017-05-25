@@ -79,6 +79,7 @@
     <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\osd.js.download" />
     <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\osd_listener.js.download" />
     <None Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject_files\pubads_impl_117.js.download" />
+    <None Include="Data\data.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Articles\Data Driven Troubles\Data-driven troubles - CodeProject.html" />
