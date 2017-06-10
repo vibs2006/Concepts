@@ -94,12 +94,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="ReadJSONUsingCSharp.aspx" />
-    <Content Include="scripts\jquery-1.12.4.min.map" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.js" />
+    <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,11 +115,6 @@
   <ItemGroup>
     <Content Include="data.txt" />
     <Content Include="ReadingJSONfromText.html" />
-    <Content Include="scripts\ai.0.22.9-build00167.js" />
-    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <None Include="scripts\jquery-1.12.4.intellisense.js" />
-    <Content Include="scripts\jquery-1.12.4.js" />
-    <Content Include="scripts\jquery-1.12.4.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
