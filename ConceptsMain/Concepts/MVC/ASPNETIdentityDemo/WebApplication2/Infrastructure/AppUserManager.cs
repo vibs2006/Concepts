@@ -57,6 +57,59 @@ namespace AspnetIdentityDemo.Infrastructure
         {
             AppIdentityDbContext db = context.Get<AppIdentityDbContext>();
             AppUserManager manager = new AppUserManager(new UserStore<AppUser>(db));
+            /*
+            One of the most common requirements, especially for corporate applications, is to enforce a password policy.
+            ASP.NET Identity provides the PasswordValidator class, which can be used to configure a password policy using the
+            properties.
+
+            A password policy is defined by creating an instance of the PasswordValidator class, setting the property values,
+            and using the object as the value for the PasswordValidator property in the Create method that OWIN uses to
+            instantiate the AppUserManager class
+
+            I used the PasswordValidator class to specify a policy that requires at least six characters and a mix of uppercase
+            and lowercase characters. You can see how the policy is applied by starting the application, navigating to the /Admin/
+            Index URL, clicking the Create button, and trying to create an account that has the password secret. The password
+            doesn’t meet the new password policy, and an error is added to the model state
+            */
+
+            manager.PasswordValidator = new CustomPasswordValidator //CustomePasswordValidator replaced PasswordValidator
+            {
+                RequiredLength = 4,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = true,
+                RequireUppercase = false
+            };
+
+            /*
+            More general validation can be performed by creating an instance of the UserValidator class and using the
+            properties it defines to restrict other user property values.
+            
+            Performing validation on user details is done by creating an instance of the UserValidator class and assigning
+            it to the UserValidator property of the user manager class within the Create method that OWIN uses to create
+            instances.
+
+            The UserValidator class takes a generic type parameter that specifies the type of the user class, which is AppUser
+            in this case. Its constructor argument is the user manager class, which is an instance of the user manager class
+            (which is AppUserManager for my application).
+            The built-in validation support is rather basic, but you can create a custom validation policy by creating a class
+            that is derived from UserValidator.
+
+             */
+
+            //manager.UserValidator = new UserValidator<AppUser>(manager) //This is original uservalidator
+            //{
+            //    AllowOnlyAlphanumericUserNames = true,
+            //    RequireUniqueEmail = true
+            //};
+
+            manager.UserValidator = new CustomUserValidator(manager)
+            {
+                AllowOnlyAlphanumericUserNames = true,
+                RequireUniqueEmail = true
+            };
+
+
             return manager;
         }
 
