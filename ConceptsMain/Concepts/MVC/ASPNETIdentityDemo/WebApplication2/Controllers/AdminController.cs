@@ -177,6 +177,8 @@ namespace AspnetIdentityDemo.Controllers
             AppUser user = await UserManager.FindByIdAsync(id);
             if (user != null)
             {
+                //notice that i have to change the value of the Email property before i perform the validation because the
+                //ValidateAsync method only accepts instances of the user class.
                 user.Email = email;
 
                 IdentityResult validEmail = await UserManager.UserValidator.ValidateAsync(user);
@@ -187,7 +189,12 @@ namespace AspnetIdentityDemo.Controllers
                 }
 
                 IdentityResult validPass = null;
-
+                /*
+                 The next step is to change the password, if one has been supplied. ASP.NET Identity stores hashes of passwords,
+                rather than the passwords themselves—this is intended to prevent passwords from being stolen. My next step is to
+                take the validated password and generate the hash code that will be stored in the database so that the user can be
+                authenticated.
+                 */
                 if (password != string.Empty)
                 {
                     validPass = await UserManager.PasswordValidator.ValidateAsync(password);
@@ -204,6 +211,7 @@ namespace AspnetIdentityDemo.Controllers
 
                 if ((validEmail.Succeeded && validPass == null) || (validEmail.Succeeded && password != string.Empty && validPass.Succeeded))
                 {
+                    //changes to user class are not stored in the database untill the UpdateAsync method is called, like this
                     IdentityResult result = await UserManager.UpdateAsync(user);
                     if (result.Succeeded)
                     {
@@ -214,12 +222,14 @@ namespace AspnetIdentityDemo.Controllers
                         AddErrorsFromResult(result);
                     }
                 }
-                else
-                {
-                    ModelState.AddModelError("", "User Not Found");
-                }
-                return View(user);
+                
             }
+            else
+            {
+                ModelState.AddModelError("", "User Not Found");
+            }
+
+            return View(user);
         }
 
     }
