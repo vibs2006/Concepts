@@ -9,7 +9,7 @@ using AspnetIdentityDemo.Models;
 namespace AspnetIdentityDemo.Infrastructure
 {
     /*
-    The next step is to create an Entity Framework database context that operates on the AppUser class. This will allow
+    Create an Entity Framework database context that operates on the AppUser class. This will allow
     the Code First feature to create and manage the schema for the database and provide access to the data it stores. The
     context class is derived from IdentityDbContext<T>, where T is the user class (AppUser in the example). I created a
     folder called Infrastructure in the project and added to it a class file called AppIdentityDbContext.cs 
