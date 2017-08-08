@@ -24,9 +24,7 @@ namespace AspnetIdentityDemo.Infrastructure
     placeholder so that I can return to seeding the database later by adding statements to the PerformInitialSetup
     method. I show you how to seed the database in Chapter 14.
     Finally, the AppIdentityDbContext class defines a Create method. This is how instances of the class will be
-    created when needed by the OWIN,
-
-
+    created when needed by the OWIN.
     */
     public class AppIdentityDbContext: IdentityDbContext<AppUser>
     {
