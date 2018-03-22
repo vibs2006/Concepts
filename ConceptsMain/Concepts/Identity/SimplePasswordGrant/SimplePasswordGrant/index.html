@@ -12,7 +12,7 @@
 
         .success{
             font-weight:bold;
-            color:azure;
+            color:darkgreen;
         }
     </style>
 </head>
@@ -33,11 +33,15 @@
         </label>
 
         <label>
-            <input type="button" value="Access Authorized Resource" id="btnAccessAuth" />
+            <input type="button" value="Access Authorized Resource using Token" id="btnAccessAuth" />
         </label>
 
         <label>
-            <input type="button" value="Access Anonumous Resource" id="btnAccessAnony" />
+            <input type="button" value="Access Authorized Resource without Token" id="btnAccessAuthWithoutToken" />
+        </label>
+
+        <label>
+            <input type="button" value="Access Anonumous Resource without Token" id="btnAccessAnony" />
         </label>
     </div>
     <p></p>
@@ -51,6 +55,7 @@
     <script>
         var accessToken = ''; //access_token
         $("#btnAccessToken").click(function () {
+            $("#divDynamic").html("");
             var loginData = 'grant_type=password&username='+ $('#txtUserName').val() +'&password=' + $('#txtPassword').val();
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function () {
@@ -67,6 +72,7 @@
         });
 
         $("#btnAccessAuth").click(function () {
+            $("#divDynamic").html("");
             $.ajax({
                 url: '/Home/AuthorizeAccess',
                 type: 'GET',
@@ -74,9 +80,71 @@
                     xhr.setRequestHeader('Authorization', 'bearer ' + accessToken);
                 },
                 data: {},
-                success: function (data) { console.log(data); },
-                error: function (data) { console.error(data); },
+                success: function (data) {
+                    console.log(data);
+                    $("#divDynamic").removeAttr("class");
+                    $("#divDynamic").addClass("success");
+                    $("#divDynamic").html(JSON.stringify(data));
+                },
+                error: function (data) {
+                    console.error(data); $("#divDynamic").removeAttr("class");
+                    $("#divDynamic").addClass("error");
+                    $("#divDynamic").html(data.statusText);
+                }
             });
+        });
+
+
+        $("#btnAccessAuthWithoutToken").click(function () {
+            $("#divDynamic").html("");
+            $.ajax({
+                url: '/Home/AuthorizeAccess',
+                type: 'GET',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'bearer ' + '');
+                },
+                data: {},
+                success: function (data) {
+                    console.log(data);
+                    $("#divDynamic").removeAttr("class");
+                    $("#divDynamic").addClass("success");
+                    $("#divDynamic").html(JSON.stringify(data));
+                },
+                error: function (data) {
+                    console.error(data); $("#divDynamic").removeAttr("class");
+                    $("#divDynamic").addClass("error");
+                    $("#divDynamic").html(data.statusText);
+                }
+            });
+        });
+
+        $("#btnAccessAnony").click(function () {
+            $("#divDynamic").html("");
+            $.ajax({
+                url: '/Home/General',
+                type: 'GET',
+                beforeSend: function (xhr) {
+                    //xhr.setRequestHeader('Authorization', 'bearer ' + '');
+                },
+                data: {},
+                success: function (data) {
+                    console.log(data);
+                    $("#divDynamic").removeAttr("class");
+                    $("#divDynamic").addClass("success");
+                    $("#divDynamic").html(JSON.stringify(data));
+                },
+                error: function (data) {
+                    console.error(data); $("#divDynamic").removeAttr("class");
+                    $("#divDynamic").addClass("error");
+                    $("#divDynamic").html(data.statusText);
+                }
+            });
+        });
+
+        $("#btnClearAccessToken").click(function () {
+            $("#divDynamic").html("");
+            accessToken = '';
+            $("#spanAccessToken").html("");
         });
 
 
