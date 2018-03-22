@@ -66,6 +66,19 @@
             xmlhttp.send(loginData);
         });
 
+        $("#btnAccessAuth").click(function () {
+            $.ajax({
+                url: '/Home/AuthorizeAccess',
+                type: 'GET',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', 'bearer ' + accessToken);
+                },
+                data: {},
+                success: function (data) { console.log(data); },
+                error: function (data) { console.error(data); },
+            });
+        });
+
 
     </script>
 </body>
