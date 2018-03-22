@@ -4,21 +4,32 @@
     <title></title>
 	<meta charset="utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <style>
+        .error{
+            font-weight:bold;
+            color:red;
+        }
+
+        .success{
+            font-weight:bold;
+            color:azure;
+        }
+    </style>
 </head>
 <body>
     <div>
         <label>
             UserName:
-            <input type="text" id="txtUserName" />
+            <input type="text" id="txtUserName" value="test@test.com" />
         </label>
 
         <label>
             Password:
-            <input type="text" id="txtPassword" />
+            <input type="text" id="txtPassword" value="test" />
         </label>
         <br /><br />
         <label>
-            <input type="button" value="Get Access Token using Password Grant" id="btnAccessToken" />
+            <input type="button" value="Get Access Token using Password Grant form-url-encoded" id="btnAccessToken" />
         </label>
 
         <label>
@@ -30,10 +41,32 @@
         </label>
     </div>
     <p></p>
+    <p>
+        <div id="divDynamic"></div>
+    </p>
     <div>
-        <label>Access Token Value: <span id="spanAccessToken"></span></label><br />
+        <div>Access Token Value: <div id="spanAccessToken" style="width:400px;"></div></div><br />
         <label><input type="button" value="Clear Access Token" id="btnClearAccessToken" /></label>
     </div>
+    <script>
+        var accessToken = ''; //access_token
+        $("#btnAccessToken").click(function () {
+            var loginData = 'grant_type=password&username='+ $('#txtUserName').val() +'&password=' + $('#txtPassword').val();
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    console.log(JSON.parse(xmlhttp.responseText));
+                    var obj = JSON.parse(xmlhttp.responseText);
+                    accessToken = obj.access_token;
+                    $("#spanAccessToken").html(accessToken);
+                }
+            }
+            xmlhttp.open("POST", "/token", true);
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send(loginData);
+        });
 
+
+    </script>
 </body>
 </html>
