@@ -1,0 +1,3 @@
+﻿https://stackoverflow.com/a/29392934/1436594 
+
+https://stackoverflow.com/questions/39172547/how-to-implement-rest-api-with-oauth-2-0-for-multiple-client-access/39194617#39194617 

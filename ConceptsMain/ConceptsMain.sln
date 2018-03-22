@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUtilities", "Console
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetIdentityDemo", "Concepts\MVC\ASPNETIdentityDemo\WebApplication2\AspnetIdentityDemo.csproj", "{A1374232-8D0C-4979-B438-BCDEEF934429}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePasswordGrant", "Concepts\Identity\SimplePasswordGrant\SimplePasswordGrant\SimplePasswordGrant.csproj", "{968D4851-296A-46A9-A3F2-4969C4AEDAE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,10 @@ Global
 		{A1374232-8D0C-4979-B438-BCDEEF934429}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1374232-8D0C-4979-B438-BCDEEF934429}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1374232-8D0C-4979-B438-BCDEEF934429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,5 +150,6 @@ Global
 		{4720116D-5998-453B-B15F-AA6EA072646C} = {82DB8C56-2EBB-4776-9BC5-F2DC185C010A}
 		{BC288D2C-40A2-4121-978E-E6922FAE7BA0} = {4720116D-5998-453B-B15F-AA6EA072646C}
 		{A1374232-8D0C-4979-B438-BCDEEF934429} = {04F61548-DC76-4C77-B10B-EBF5732747E9}
+		{968D4851-296A-46A9-A3F2-4969C4AEDAE5} = {82DB8C56-2EBB-4776-9BC5-F2DC185C010A}
 	EndGlobalSection
 EndGlobal

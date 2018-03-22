@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+    <div>
+        <label>
+            UserName:
+            <input type="text" id="txtUserName" />
+        </label>
+
+        <label>
+            Password:
+            <input type="text" id="txtPassword" />
+        </label>
+        <br /><br />
+        <label>
+            <input type="button" value="Get Access Token using Password Grant" id="btnAccessToken" />
+        </label>
+
+        <label>
+            <input type="button" value="Access Authorized Resource" id="btnAccessAuth" />
+        </label>
+
+        <label>
+            <input type="button" value="Access Anonumous Resource" id="btnAccessAnony" />
+        </label>
+    </div>
+    <p></p>
+    <div>
+        <label>Access Token Value: <span id="spanAccessToken"></span></label><br />
+        <label><input type="button" value="Clear Access Token" id="btnClearAccessToken" /></label>
+    </div>
+
+</body>
+</html>
