@@ -16,7 +16,7 @@ namespace HelloWorldMvcWebApiApplication.Controllers
             return View();
         }
 
-        public ActionResult GetStringFromCSVFile()
+        public ActionResult GetStringFromCSVFileDynamicTyped()
         {
             StringBuilder bldr = new StringBuilder();
             foreach (dynamic e in new ChoCSVReader("Emp.csv").WithFirstLineHeader())
@@ -24,5 +24,20 @@ namespace HelloWorldMvcWebApiApplication.Controllers
 
             return Content(bldr.ToString());
         }
+
+        public ActionResult GetStringFromCSVFileStronglyTyped()
+        {
+            StringBuilder bldr = new StringBuilder();
+            foreach (Employee e in new ChoCSVReader<Employee>("Emp.csv").WithFirstLineHeader())
+                bldr.AppendLine("Id: " + e.Id + " Name: " + e.Name);
+
+            return Content(bldr.ToString());
+        }
+    }
+
+    public class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
