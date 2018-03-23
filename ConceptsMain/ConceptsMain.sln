@@ -44,6 +44,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetIdentityDemo", "Conce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimplePasswordGrant", "Concepts\Identity\SimplePasswordGrant\SimplePasswordGrant\SimplePasswordGrant.csproj", "{968D4851-296A-46A9-A3F2-4969C4AEDAE5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HelloWorld", "HelloWorld", "{192FDBDA-DAB6-48E7-80BE-D52BB0FD732C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldMvcWebApiApplication", "Concepts\HelloWorld\SampleMVCWebapiApp\HelloWorldMvcWebApiApplication\HelloWorldMvcWebApiApplication.csproj", "{FC4B6CBD-B293-48D3-ABE2-449B889E931A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +94,10 @@ Global
 		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{968D4851-296A-46A9-A3F2-4969C4AEDAE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC4B6CBD-B293-48D3-ABE2-449B889E931A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC4B6CBD-B293-48D3-ABE2-449B889E931A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC4B6CBD-B293-48D3-ABE2-449B889E931A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC4B6CBD-B293-48D3-ABE2-449B889E931A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,5 +120,7 @@ Global
 		{BC288D2C-40A2-4121-978E-E6922FAE7BA0} = {4720116D-5998-453B-B15F-AA6EA072646C}
 		{A1374232-8D0C-4979-B438-BCDEEF934429} = {04F61548-DC76-4C77-B10B-EBF5732747E9}
 		{968D4851-296A-46A9-A3F2-4969C4AEDAE5} = {82DB8C56-2EBB-4776-9BC5-F2DC185C010A}
+		{192FDBDA-DAB6-48E7-80BE-D52BB0FD732C} = {82DB8C56-2EBB-4776-9BC5-F2DC185C010A}
+		{FC4B6CBD-B293-48D3-ABE2-449B889E931A} = {192FDBDA-DAB6-48E7-80BE-D52BB0FD732C}
 	EndGlobalSection
 EndGlobal
