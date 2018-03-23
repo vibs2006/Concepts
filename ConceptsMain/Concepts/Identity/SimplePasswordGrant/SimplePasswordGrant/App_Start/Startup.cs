@@ -20,13 +20,13 @@ namespace SimplePasswordGrant
                 TokenEndpointPath = new PathString("/token"),
                 Provider = new OAuthAuthorizationServerProvider()
                 {
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+                    #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
                     OnValidateClientAuthentication = async (context) =>
                     {
                         context.Validated();
                     },
 
-#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
+                    #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
                     OnGrantResourceOwnerCredentials = async (context) =>
                     {
                         if (context.UserName == "test@test.com" && context.Password == "test")
@@ -34,8 +34,7 @@ namespace SimplePasswordGrant
                             ClaimsIdentity oAuthIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
                             context.Validated(oAuthIdentity);
                         }
-                    }
-#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
+                    }                    
                 },
                 AllowInsecureHttp = true,
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1)
