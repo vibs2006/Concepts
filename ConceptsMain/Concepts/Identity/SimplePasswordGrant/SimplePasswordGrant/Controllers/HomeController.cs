@@ -32,5 +32,14 @@ namespace SimplePasswordGrant.Controllers
                 AccessType = "Authenticated Access"
             }, JsonRequestBehavior.AllowGet);
         }
+
+        #region Facebook Functions
+        [AllowAnonymous]
+        public ActionResult FacebookLoginTest()
+        {
+            return View("Facebook");
+        }
+
+        #endregion
     }
 }
