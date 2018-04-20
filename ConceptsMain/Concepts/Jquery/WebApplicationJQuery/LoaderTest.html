@@ -8,7 +8,7 @@
     <link href="Loader.css" rel="stylesheet" />
 </head>
 <body>
-    <input type="text" id="txtUrl" placeholder="Enter Complete URL of GET Request" value="" style="width:100%;" /><br />
+    <input type="text" id="txtUrl" placeholder="Enter Complete URL of GET Request" value="https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&site=stackoverflow" style="width:100%;" /><br />
     <input type="button" id="btnTest" value="Trigger Ajax Event" /><br/>
     
     <div id="divDynamic"></div>
@@ -20,7 +20,9 @@
         $("#btnTest").on("click", function () {
             var url = $("#txtUrl").val();
             $.get(url).done(function (data) {
-                $("#divDynamic").html(data);
+                console.clear();
+                console.log(data);
+                $("#divDynamic").html(("<span style='color:#006400;font-weight:bold;'>Data Received Successfully</span><br/>Pl check your console for results."));
             }).fail(function (error) { $("#divDynamic").html("<span style='color:red;font-weight:bold;'>An Error has occurred</span><br/>Pl check whether this url supports http get requests or not."); console.log(error);});
         });
     </script>
