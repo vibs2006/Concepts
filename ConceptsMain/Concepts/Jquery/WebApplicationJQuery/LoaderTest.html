@@ -15,7 +15,7 @@
    
 
     <script type="text/javascript">
-        var objGlobalEvent = new RegisterGlobalEvents(false, "");        
+        var objGlobalEvent = new RegisterGlobalEvents(true, "");        
         $("#btnTest").on("click", function () {
             var url = $("#txtUrl").val();
             $.get(url).done(function (data) {

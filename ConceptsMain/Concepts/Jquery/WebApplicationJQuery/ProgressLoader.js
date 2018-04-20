@@ -37,10 +37,26 @@ var globalVerboseAjax = false;
 
 var RegisterGlobalEvents = function (permissionToAnimateSortingDiv, jquerySelector) {
 
+    var divElement;
+
+    if ( (jquerySelector == undefined || jquerySelector == '') && (permissionToAnimateSortingDiv == true) ) {
+        if (typeof (divElement) == "undefined") {
+            divElement = document.createElement("div");
+            divElement.style.cssText = "display:none;color: #a94442;"; //TextDanger Font Color
+            divElement.className = "divInfoClassName bottomLeftStatusBar";
+            document.body.appendChild(divElement);
+            jquerySelector = ".divInfoClassName";
+        }
+    }
+
+
     var loaderStyle = document.createElement("style");
-    loaderStyle.innerHTML = ".DarkBg { width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; background: rgba(0,0,0,0.4); display: none; z-index: 1000;} .DarkBg #loadImg { position: absolute; top: 50%; left: 45%;  }";
+    var divLoaderStyle = '.bottomLeftStatusBar {    position: fixed;    bottom: 0;    left: 0;    background-color: #fff;}';
+    loaderStyle.innerHTML = ".DarkBg { width: 100%; height: 100%; position: absolute; top: 0px; left: 0px; background: rgba(0,0,0,0.4); display: none; z-index: 1000;} .DarkBg #loadImg { position: absolute; top: 50%; left: 45%;  }" + divLoaderStyle;
     var ref = document.querySelector("script");
     ref.parentNode.insertBefore(loaderStyle, ref);
+
+   
 
     if (permissionToAnimateSortingDiv == undefined) {
         permissionToAnimateSortingDiv = false;
