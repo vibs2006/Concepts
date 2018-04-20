@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
     <script src="ProgressLoader.js"></script>
-    <link href="Loader.css" rel="stylesheet" />
+    <!--<link href="Loader.css" rel="stylesheet" />-->
 </head>
 <body>
     <input type="text" id="txtUrl" placeholder="Enter Complete URL of GET Request" value="https://api.stackexchange.com/2.2/questions?order=desc&sort=activity&site=stackoverflow" style="width:100%;" /><br />
@@ -15,8 +15,7 @@
    
 
     <script type="text/javascript">
-        var objGlobalEvent = new RegisterGlobalEvents(false, "");
-        
+        var objGlobalEvent = new RegisterGlobalEvents(false, "");        
         $("#btnTest").on("click", function () {
             var url = $("#txtUrl").val();
             $.get(url).done(function (data) {
